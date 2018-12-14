@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 export default class Portfolio extends Component {
   render() {
-    const { slug } = this.props.pathContext
+    const { slug } = this.props.pageContext
     const postNode = this.props.data.wordpressWpPortfolio
     if (!postNode.id) {
       postNode.id = slug
@@ -13,11 +13,18 @@ export default class Portfolio extends Component {
     if (!postNode.category_id) {
       postNode.category_id = 'din-eiendom'
     }
-    console.log(this.props.data)
     return (
       <Layout>
         <Img fluid={postNode.featured_media.localFile.childImageSharp.fluid} />
+        <a href={postNode.acf.github_link}>Github</a>
+        <a href={postNode.acf.site_link}>Besøk</a>
         <h1>{postNode.title}</h1>
+        <p>
+          Teknologier:{' '}
+          {postNode.tech.map(tech => (
+            <span key={tech.slug}>{tech.name}</span>
+          ))}
+        </p>
         <div dangerouslySetInnerHTML={{ __html: postNode.content }} />
       </Layout>
     )
@@ -30,6 +37,15 @@ export const pageQuery = graphql`
       id
       title
       content
+      tech {
+        id
+        slug
+        name
+      }
+      acf {
+        site_link
+        github_link
+      }
       featured_media {
         localFile {
           childImageSharp {
