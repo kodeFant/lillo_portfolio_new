@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import PropTypes from 'prop-types'
 
 export default class Portfolio extends Component {
   render() {
@@ -13,7 +14,6 @@ export default class Portfolio extends Component {
     if (!postNode.category_id) {
       postNode.category_id = 'din-eiendom'
     }
-    console.log(this.props.data)
     return (
       <Layout>
         <Img fluid={postNode.featured_media.localFile.childImageSharp.fluid} />
@@ -22,6 +22,12 @@ export default class Portfolio extends Component {
       </Layout>
     )
   }
+}
+
+Portfolio.propTypes = {
+  slug: PropTypes.string,
+  pathContext: PropTypes.object,
+  data: PropTypes.object,
 }
 
 export const pageQuery = graphql`
