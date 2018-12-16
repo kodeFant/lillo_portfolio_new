@@ -1,0 +1,11 @@
+.projects {
+  composes: container from global;
+}
+
+.projectGrid {
+  display: flex;
+  & > div {
+    flex: 1;
+    width: 32%;
+  }
+}

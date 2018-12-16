@@ -1,35 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import Projects from '../components/projects'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      {/*       <div>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: data.allWordpressPage.edges[0].node.content,
-          }}
-        />
-      </div> */}
-      <div>
-        <h2>Prosjekter</h2>
-        {data.allWordpressWpPortfolio.edges.map(item => (
-          <div key={item.node.slug}>
-            <Link to={item.node.slug}>
-              <h3>{item.node.title}</h3>
-
-              <Img
-                fluid={item.node.featured_media.localFile.childImageSharp.fluid}
-              />
-            </Link>
-            <p dangerouslySetInnerHTML={{ __html: item.node.content }} />
-          </div>
-        ))}
-      </div>
+      <Projects data={data.allWordpressWpPortfolio.edges} />
     </Layout>
   )
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import PropTypes from 'prop-types'
@@ -23,7 +23,9 @@ export default class Portfolio extends Component {
         <p>
           Teknologier:{' '}
           {postNode.tech.map(tech => (
-            <span key={tech.slug}>{tech.name}</span>
+            <span key={tech.slug}>
+              <Link to={`/tech/${tech.slug}`}>{tech.name}</Link>
+            </span>
           ))}
         </p>
         <div dangerouslySetInnerHTML={{ __html: postNode.content }} />
@@ -34,7 +36,7 @@ export default class Portfolio extends Component {
 
 Portfolio.propTypes = {
   slug: PropTypes.string,
-  pathContext: PropTypes.object,
+  pageContext: PropTypes.object,
   data: PropTypes.object,
 }
 

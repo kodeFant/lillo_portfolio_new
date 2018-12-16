@@ -57,6 +57,7 @@ module.exports = {
         normalizer: mapPortfolioToTech,
       },
     },
+    `gatsby-plugin-sass`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {

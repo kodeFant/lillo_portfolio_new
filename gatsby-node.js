@@ -28,6 +28,11 @@ exports.createPages = ({ graphql, actions }) => {
                 slug
                 status
                 template
+                tech {
+                  id
+                  name
+                  slug
+                }
               }
             }
           }
@@ -54,6 +59,40 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
         resolve()
+      })
+      .then(() => {
+        return graphql(`
+          {
+            allWordpressWpTech(filter: { count: { gt: 0 } }) {
+              edges {
+                node {
+                  id
+                  name
+                  slug
+                }
+              }
+            }
+          }
+        `)
+      })
+      .then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+
+        const techTemplate = path.resolve(`./src/templates/tech.js`)
+
+        // Create a Gatsby page for each WordPress tag
+        _.each(result.data.allWordpressWpTech.edges, ({ node: tech }) => {
+          createPage({
+            path: `/tech/${tech.slug}/`,
+            component: techTemplate,
+            context: {
+              slug: tech.slug,
+            },
+          })
+        })
       })
   })
   // ==== END POSTS ====

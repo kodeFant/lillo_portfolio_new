@@ -1,0 +1,12 @@
+@import '../styles/variables.scss';
+
+:global(.container) {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include breakpoint(tablet) {
+    width: 970px;
+  }
+}
