@@ -1,0 +1,94 @@
+@import '../styles/variables';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #DDD;
+  background-color: #334;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+.headerContent {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+
+  @include breakpoint(phablet) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  span {
+    font-weight: 700;
+    color: rgba(orange, 0.5);
+  }
+}
+
+// NAV
+.nav {
+  align-self: flex-end;
+  height: 56px;
+}
+
+// ENDNAV
+
+$php: #8892bf;
+$react: #65daf9;
+$css: #3f95d4;
+$javascript: #f7df1e;
+$laravel: #eb625e;
+$stories: rgb(94, 187, 83);
+
+.php {
+  color: $php;
+
+  span {
+    color: rgba($php, 0.6);
+  }
+}
+
+.react {
+  color: $react;
+
+  span {
+    color: rgba($react, 0.6);
+  }
+}
+
+.css {
+  color: $css;
+
+  span {
+    color: rgba($css, 0.6);
+  }
+}
+
+.javascript {
+  color: $javascript;
+
+  span {
+    color: rgba($javascript, 0.6);
+  }
+}
+
+.laravel {
+  color: $laravel;
+
+  span {
+    color: rgba($laravel, 0.6);
+  }
+}
+
+.stories {
+  color: $stories;
+
+  span {
+    color: rgba($stories, 0.6);
+  }
+}

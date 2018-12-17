@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import Roll from 'react-reveal/Roll'
 import styles from './projects.module.scss'
 
 const projects = ({ data }) => (
@@ -10,11 +11,14 @@ const projects = ({ data }) => (
       {data.map(item => (
         <div key={item.node.slug}>
           <Link to={item.node.slug}>
-            <h3>{item.node.title}</h3>
-
-            <Img
-              fluid={item.node.featured_media.localFile.childImageSharp.fluid}
-            />
+            <Roll left>
+              <h3>{item.node.title}</h3>
+            </Roll>
+            <Roll right>
+              <Img
+                fluid={item.node.featured_media.localFile.childImageSharp.fluid}
+              />
+            </Roll>
           </Link>
           <p dangerouslySetInnerHTML={{ __html: item.node.content }} />
         </div>

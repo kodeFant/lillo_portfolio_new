@@ -1,42 +1,68 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import styles from './header.module.scss'
+import Typing from 'react-typing-animation'
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <>
+    <header className={styles.header}>
+      <div className={styles.headerContent}>
+        <p className={styles.headerText}>
+          Jeg heter <span>Lars Lillo Ulvestad</span>
+        </p>
+        <p>og jobber med</p>
+        <Typing loop="true">
+          <p className={styles.javascript}>
+            <span>() ={'>'}</span> javaScript<span>()</span>
+          </p>
+          <Typing.Delay ms={1000} />
+          <Typing.Backspace count={20} />
+          <p className={styles.react}>
+            <span>{'<'}</span>React <span>/{'>'}</span>
+          </p>
+          <Typing.Delay ms={1000} />
+          <Typing.Backspace count={20} />
+
+          <p className={styles.php}>
+            <span>{'<?'}</span>php <span>{'?>'}</span>
+          </p>
+          <Typing.Delay ms={1000} />
+          <Typing.Backspace count={20} />
+          <p className={styles.laravel}>
+            <span>{'{{'}</span> $laravel <span>{'}}'}</span>
+          </p>
+          <Typing.Delay ms={1000} />
+          <Typing.Backspace count={20} />
+          <p className={styles.css}>
+            .css{' '}
+            <span>
+              {'{'} {'}'}
+            </span>
+          </p>
+          <Typing.Delay ms={1000} />
+          <Typing.Backspace count={20} />
+
+          <p className={styles.stories}>
+            Digitale <span>historier</span>
+          </p>
+          <Typing.Delay ms={1000} />
+          <Typing.Backspace count={20} />
+
+          <p />
+        </Typing>
+      </div>
+      <nav className={styles.nav}>
+        <ul>
+          <li>sdfsdf</li>
+          <li>sdfsdf</li>
+        </ul>
+      </nav>
+    </header>
+  </>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: '',
 }
 
 export default Header
