@@ -1,5 +1,7 @@
 .projects {
   composes: container from global;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .projectGrid {

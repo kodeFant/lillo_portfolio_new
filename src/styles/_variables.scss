@@ -1,3 +1,11 @@
+// Variables
+$navbarHeight: 3rem;
+$headerBackgroundColor: #344;
+$headerBackgroundImage: none;
+
+// Colors
+$white: #ddd;
+
 // Media Queries
 @mixin breakpoint($point) {
   @if $point==desktop {

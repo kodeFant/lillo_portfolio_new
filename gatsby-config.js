@@ -50,6 +50,7 @@ module.exports = {
           // "/*/*/categories",
           // "/*/*/tags",
           // "/*/*/taxonomies",
+          '/wp-api-menus/v2/*',
           '/*/*/pages',
           '/*/*/portfolio',
           '/*/*/tech',

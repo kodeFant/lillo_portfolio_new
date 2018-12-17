@@ -2,21 +2,29 @@
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  color: #DDD;
-  background-color: #334;
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  height: calc(100% - #{$navbarHeight});
+  color: $white;
+  background-color: $headerBackgroundColor;
+  background-image: url('https://www.transparenttextures.com/patterns/classy-fabric.png');
 }
 
-.headerContent {
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  composes: container from global;
   font-size: 1.5rem;
   line-height: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
 
   @include breakpoint(phablet) {
     font-size: 2rem;
     line-height: 3rem;
+    text-align: left;
   }
 
   @include breakpoint(tablet) {
@@ -26,14 +34,8 @@
 
   span {
     font-weight: 700;
-    color: rgba(orange, 0.5);
+    color: orange;
   }
-}
-
-// NAV
-.nav {
-  align-self: flex-end;
-  height: 56px;
 }
 
 // ENDNAV

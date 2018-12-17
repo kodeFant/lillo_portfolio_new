@@ -1,11 +1,14 @@
 :global {
-
   html,
   body,
   div,
   span,
   iframe,
   p,
+  h1,
+  h2,
+  h3,
+  h4,
   blockquote,
   pre,
   a,
@@ -125,5 +128,11 @@
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+
+  html,
+  body,
+  #___gatsby > div {
+    height: 100vh;
   }
 }

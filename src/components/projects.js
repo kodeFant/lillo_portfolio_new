@@ -5,7 +5,7 @@ import Roll from 'react-reveal/Roll'
 import styles from './projects.module.scss'
 
 const projects = ({ data }) => (
-  <div className={styles.projects}>
+  <div id="portfolio" className={styles.projects}>
     <h2>Prosjekter</h2>
     <div className={styles.projectGrid}>
       {data.map(item => (
