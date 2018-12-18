@@ -2,9 +2,12 @@
 $navbarHeight: 3rem;
 $headerBackgroundColor: #344;
 $headerBackgroundImage: none;
+$main: orange;
+$mainFont: 'Raleway', sans-serif;
 
 // Colors
-$white: #ddd;
+$white: rgb(245, 245, 245);
+$black: rgb(50, 50, 50);
 
 // Media Queries
 @mixin breakpoint($point) {

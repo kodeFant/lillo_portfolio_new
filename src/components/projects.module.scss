@@ -1,3 +1,7 @@
+@import '../styles/variables';
+
+$outerMargin: 0rem;
+
 .projects {
   composes: container from global;
   margin-top: 3rem;
@@ -6,8 +10,73 @@
 
 .projectGrid {
   display: flex;
-  & > div {
-    flex: 1;
-    width: 32%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 calc(1 - #{$outerMargin});
+}
+
+.projectItem {
+  flex: 1;
+  display: block;
+  position: relative;
+  margin: $outerMargin;
+  overflow: hidden;
+}
+
+.projectImage {
+  z-index: 1;
+}
+
+.projectTitle {
+  transform: translateY(-20px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn {
+  background-color: $main;
+  transform: translateY(20px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $white;
+  position: absolute;
+  border: 0.2rem transparent solid;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.5s ease-in;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+    border: 0.2rem $main dashed;
+
+    & .projectTitle {
+      transform: translateY(0);
+    }
+
+    & .btn {
+      transform: translateY(0);
+    }
   }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.sectionHeader {
+  composes: sectionHeader from '../styles/shared.scss';
+}
+
+.btn {
+  composes: btn from global;
 }

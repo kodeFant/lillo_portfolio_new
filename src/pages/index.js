@@ -2,14 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
+import Header from '../components/header'
 import Layout from '../components/layout'
 import Projects from '../components/projects'
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
-      <Projects data={data.allWordpressWpPortfolio.edges} />
-    </Layout>
+    <>
+      <Header />
+      <Layout location="/">
+        <Projects data={data.allWordpressWpPortfolio.edges} />
+      </Layout>
+    </>
   )
 }
 
@@ -28,11 +32,17 @@ export const pageQuery = graphql`
           slug
           title
           content
-          featured_media {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1200, maxHeight: 675) {
-                  ...GatsbyImageSharpFluid_withWebp
+          tech {
+            slug
+            name
+          }
+          acf {
+            main_image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 400, maxHeight: 300) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
                 }
               }
             }

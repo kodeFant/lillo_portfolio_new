@@ -36,15 +36,6 @@ export const pageQuery = graphql`
           tech {
             slug
           }
-          featured_media {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1200, maxHeight: 675) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
         }
       }
     }

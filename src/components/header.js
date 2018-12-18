@@ -8,9 +8,10 @@ const Header = () => (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>
+          <p className={styles.headerText} />
           <p className={styles.headerText}>
             Jeg er <span>webutvikler</span> og jobber med
-          </p>{' '}
+          </p>
           <Typing loop>
             <p className={styles.javascript}>
               <span>() ={'>'}</span> javaScript<span>()</span>

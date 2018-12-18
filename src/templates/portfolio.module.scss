@@ -1,0 +1,4 @@
+.portfolio {
+  composes: container from global;
+  composes: article from '../styles/shared.scss';
+}

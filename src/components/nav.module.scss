@@ -6,6 +6,7 @@
   background-color: rgba($headerBackgroundColor, 0.9);
   background-image: url('https://www.transparenttextures.com/patterns/classy-fabric.png');
   height: $navbarHeight;
+  border-bottom: 4px solid $main;
 }
 
 .navContainer {
@@ -24,8 +25,9 @@
     color: $white;
   }
   color: $white;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1rem;
+
+  margin-bottom: 0;
   @include breakpoint(phablet) {
     font-size: 1.3rem;
   }
@@ -34,6 +36,8 @@
 .navLinks {
   display: none;
   color: $white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
 
   @include breakpoint(phablet) {
     display: flex;
@@ -45,8 +49,9 @@
 
   a {
     color: $white;
+    transition: color 0.3s ease-in-out;
     &:hover {
-      font-size: 1.2rem;
+      color: $main;
     }
   }
 }

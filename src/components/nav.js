@@ -3,7 +3,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styles from './nav.module.scss'
 
-const nav = ({ siteTitle }) => (
+const nav = ({ siteTitle, location }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -19,16 +19,18 @@ const nav = ({ siteTitle }) => (
     render={data => (
       <nav className={styles.nav}>
         <div className={styles.navContainer}>
-          <h1 className={styles.brand}>
-            <Link to="/">{siteTitle}</Link>
-          </h1>
           <ul className={styles.navLinks}>
             {data.wordpressWpApiMenusMenusItems.items.map(item => (
               <li key={item.object_slug}>
-                <a href={`#${item.object_slug}`}>{item.title}</a>
+                <Link to={`/#${item.object_slug}`}>{item.title}</Link>
               </li>
             ))}
           </ul>
+          {location !== '/' ? (
+            <h1 className={styles.brand}>
+              <Link to="/">{siteTitle}</Link>
+            </h1>
+          ) : null}
         </div>
       </nav>
     )}

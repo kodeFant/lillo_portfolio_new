@@ -7,7 +7,7 @@ import Header from './header'
 import Nav from './nav'
 import './layout.scss'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -38,8 +38,7 @@ const Layout = ({ children }) => (
           >
             <html lang="en" />
           </Helmet>
-          <Header />
-          <Nav siteTitle={metaData.name} />
+          <Nav siteTitle={metaData.name} location={location} />
           <div>{children}</div>
         </>
       )
