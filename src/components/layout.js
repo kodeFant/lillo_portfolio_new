@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import Nav from './nav'
-import './layout.scss'
+import './global.scss'
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -39,7 +39,7 @@ const Layout = ({ children, location }) => (
             <html lang="en" />
           </Helmet>
           <Nav siteTitle={metaData.name} location={location} />
-          <div>{children}</div>
+          {children}
         </>
       )
     }}
