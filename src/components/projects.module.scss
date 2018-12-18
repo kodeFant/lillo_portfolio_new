@@ -9,17 +9,20 @@ $outerMargin: 0rem;
 }
 
 .projectGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 calc(1 - #{$outerMargin});
+  display: grid;
+  width: 100%;
+  grid-gap: 0.5rem;
+  @include breakpoint(phablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+  }
 }
 
 .projectItem {
-  flex: 1;
-  display: block;
   position: relative;
-  margin: $outerMargin;
   overflow: hidden;
 }
 
