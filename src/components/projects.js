@@ -3,12 +3,14 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import styles from './projects.module.scss'
-import { Flip } from 'react-reveal'
+import { Flip, Fade } from 'react-reveal'
 
 const projects = ({ data }) => (
   <div id="portfolio" className={styles.portfolio}>
     <div className={styles.projects}>
-      <h2 className={styles.sectionHeader}>Prosjekter</h2>
+      <Fade bottom>
+        <h2 className={styles.sectionHeader}>Prosjekter</h2>
+      </Fade>
       <div className={styles.projectGrid}>
         {data.map((item, index) => (
           <Flip left key={item.node.slug}>

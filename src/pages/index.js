@@ -25,7 +25,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    allWordpressWpPortfolio {
+    allWordpressWpPortfolio(sort: { fields: [menu_order], order: ASC }) {
       edges {
         node {
           id

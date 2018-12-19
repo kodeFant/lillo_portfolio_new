@@ -3,7 +3,7 @@
 // NAV
 .nav {
   justify-self: flex-end;
-  background-color: rgba($headerBackgroundColor, 0.9);
+  background-color: $navBackgroundColor;
   background-image: url('https://www.transparenttextures.com/patterns/classy-fabric.png');
   height: $navbarHeight;
   border-bottom: 4px solid $main;

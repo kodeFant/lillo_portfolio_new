@@ -1,8 +1,5 @@
 @import '../styles/variables';
 
-$height: 2rem;
-$width: 2rem;
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -19,6 +16,9 @@ $width: 2rem;
 }
 
 /* Wrapper */
+$height: 2rem;
+$width: 2rem;
+$iconButtonHoverWidth: 5rem;
 .iconButton {
   margin: 0.8rem;
   background-color: rgba($white, 0.9);
@@ -55,10 +55,10 @@ $width: 2rem;
   width: 0;
 }
 .iconButton:hover span {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 5rem;
-  margin: -2.5rem;
+  width: $iconButtonHoverWidth;
+  height: $iconButtonHoverWidth;
+  border-radius: $iconButtonHoverWidth;
+  margin: calc(#{$iconButtonHoverWidth} / -2);
 }
 .twitter span {
   background-color: #4099ff;
@@ -67,7 +67,7 @@ $width: 2rem;
   background-color: #0077b5;
 }
 .github span {
-  background-color: #333;
+  background-color: #bd2c00;
 }
 
 /* Icons */

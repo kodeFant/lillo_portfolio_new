@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
+import { Sticky, StickyContainer } from 'react-sticky'
 import Nav from './nav'
 import Footer from './footer'
 
@@ -39,9 +39,17 @@ const Layout = ({ children, location }) => (
           >
             <html lang="en" />
           </Helmet>
-          <Nav siteTitle={metaData.name} location={location} />
-          {children}
-          <Footer />
+          <StickyContainer>
+            <Sticky>
+              {({ style }) => (
+                <div style={{ ...style, zIndex: 10 }}>
+                  <Nav siteTitle={metaData.name} location={location} />
+                </div>
+              )}
+            </Sticky>
+            {children}
+            <Footer />
+          </StickyContainer>
         </>
       )
     }}
