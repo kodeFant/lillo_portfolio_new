@@ -1,0 +1,115 @@
+@import '../styles/variables';
+
+$height: 2rem;
+$width: 2rem;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  background-color: $headerBackgroundColor;
+  background-image: url('https://www.transparenttextures.com/patterns/classy-fabric.png');
+  color: $white;
+}
+
+.socialMediaButtons {
+  display: flex;
+}
+
+/* Wrapper */
+.iconButton {
+  margin: 0.8rem;
+  background-color: rgba($white, 0.9);
+  border-radius: 3.6rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+/* Circle */
+.iconButton span {
+  border-radius: 0;
+  display: block;
+  height: 0;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 0;
+}
+.iconButton:hover span {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+  margin: -2.5rem;
+}
+.twitter span {
+  background-color: #4099ff;
+}
+.linkedin span {
+  background-color: #0077b5;
+}
+.github span {
+  background-color: #333;
+}
+
+/* Icons */
+.iconButton svg {
+  background: none;
+  color: white;
+  height: $height;
+  left: 0;
+  line-height: 3.6rem;
+
+  top: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  width: $width;
+  z-index: 10;
+}
+.iconButton .iconTwitter {
+  color: #4099ff;
+}
+.iconButton .iconLinkedin {
+  color: #0077b5;
+}
+.iconButton .iconGithub {
+  color: #333;
+}
+.iconButton:hover .iconTwitter,
+.iconButton:hover .iconGithub,
+.iconButton:hover .iconLinkedin {
+  color: white;
+}
+
+.followMe {
+  margin-bottom: 1rem;
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+
+  span {
+    color: $main;
+  }
+}

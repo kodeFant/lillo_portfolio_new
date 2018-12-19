@@ -8,9 +8,11 @@ const Header = () => (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <p className={styles.headerText} />
           <p className={styles.headerText}>
-            Jeg er <span>webutvikler</span> og jobber med
+            Hei. Jeg heter <span>Lars Lillo Ulvestad</span>
+          </p>
+          <p className={styles.headerDescription}>
+            Jeg er webutvikler og jobber med
           </p>
           <Typing loop>
             <p className={styles.javascript}>

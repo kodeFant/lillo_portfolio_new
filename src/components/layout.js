@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
 import Nav from './nav'
+import Footer from './footer'
+
 import './global.scss'
 
 const Layout = ({ children, location }) => (
@@ -40,6 +41,7 @@ const Layout = ({ children, location }) => (
           </Helmet>
           <Nav siteTitle={metaData.name} location={location} />
           {children}
+          <Footer />
         </>
       )
     }}

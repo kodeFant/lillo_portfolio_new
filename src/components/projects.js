@@ -6,11 +6,11 @@ import styles from './projects.module.scss'
 import { Flip } from 'react-reveal'
 
 const projects = ({ data }) => (
-  <div className={styles.portfolio}>
+  <div id="portfolio" className={styles.portfolio}>
     <div className={styles.projects}>
       <h2 className={styles.sectionHeader}>Prosjekter</h2>
       <div className={styles.projectGrid}>
-        {data.map(item => (
+        {data.map((item, index) => (
           <Flip left key={item.node.slug}>
             <div className={styles.projectItem}>
               <Img
@@ -25,13 +25,21 @@ const projects = ({ data }) => (
                     {item.node.tech.map(tech => tech.name).join(', ')}
                   </ul>
                 </div>
-                <Link
+                {/*                 <Link
                   className={styles.btn}
                   to={item.node.slug}
                   style={{ verticalAlign: 'middle' }}
+                > */}
+                <a
+                  href={item.node.acf.site_link}
+                  className={styles.btn}
+                  style={{ verticalAlign: 'middle' }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Finn ut mer
-                </Link>
+                  Besøk
+                </a>
+                {/* </Link> */}
               </div>
             </div>
           </Flip>

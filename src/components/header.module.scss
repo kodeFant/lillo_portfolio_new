@@ -13,6 +13,7 @@
 
 .headerContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   composes: container from global;
   font-size: 1.5rem;
@@ -38,7 +39,16 @@
   }
 }
 
-// ENDNAV
+.headerDescription {
+  font-size: 1.2rem;
+  @include breakpoint(phablet) {
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 2rem;
+  }
+}
 
 $php: #8892bf;
 $react: #65daf9;
