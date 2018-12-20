@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@import '../../styles/variables';
 
 $outerMargin: 0rem;
 .projects {
@@ -7,11 +7,11 @@ $outerMargin: 0rem;
 }
 
 .sectionHeader {
-  composes: sectionHeader from '../styles/shared.scss';
+  composes: sectionHeader from '../../styles/shared.scss';
 }
 
 .portfolio {
-  composes: article from '../styles/shared.scss';
+  composes: article from '../../styles/shared.scss';
   background-color: rgb(224, 224, 224);
 
   .projectGrid {
@@ -29,6 +29,8 @@ $outerMargin: 0rem;
     .projectItem {
       position: relative;
       overflow: hidden;
+      border-radius: 50%;
+      margin: 1rem;
 
       .projectImage {
         z-index: 0;
@@ -50,7 +52,8 @@ $outerMargin: 0rem;
         z-index: 0;
         transition: all 0.5s ease-in;
         text-align: center;
-        padding: 0.5rem;
+        padding: 1rem;
+        border-radius: 50%;
 
         &:hover {
           opacity: 1;

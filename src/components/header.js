@@ -5,7 +5,7 @@ import Typing from 'react-typing-animation'
 
 const Header = () => (
   <>
-    <header className={styles.header}>
+    <header id="hjem" className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>
           <p className={styles.headerText}>

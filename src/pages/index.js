@@ -4,13 +4,15 @@ import { graphql } from 'gatsby'
 
 import Header from '../components/header'
 import Layout from '../components/layout'
-import Projects from '../components/projects'
+import About from '../components/sections/about'
+import Projects from '../components/sections/projects'
 
 const IndexPage = ({ data }) => {
   return (
     <>
       <Header />
       <Layout location="/">
+        <About />
         <Projects data={data.allWordpressWpPortfolio.edges} />
       </Layout>
     </>
@@ -41,7 +43,7 @@ export const pageQuery = graphql`
             main_image {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 600) {
+                  fluid(maxWidth: 800, maxHeight: 800) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }

@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+
+.about {
+  composes: article from '../../styles/shared.scss';
+  composes: container from global;
+}
+
+.sectionHeader {
+  composes: sectionHeader from '../../styles/shared.scss';
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 90%;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 25rem auto;
+    grid-gap: 2rem;
+  }
+}
+
+.profileImg {
+  display: inline-block;
+  width: 100%;
+  max-width: 15rem;
+  max-height: 15rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.skillGrid {
+  margin-top: 2rem;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  div:hover {
+    color: #555;
+  }
+}

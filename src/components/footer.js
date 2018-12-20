@@ -4,7 +4,7 @@ import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const footer = () => (
   <footer className={styles.footer}>
-    <p className={styles.followMe}>Følg meg på sosiale medier:</p>
+    <p className={styles.followMe}>Følg meg og ta gjerne kontakt:</p>
     <div className={styles.socialMediaButtons}>
       <a
         href="https://www.linkedin.com/in/larslilloulvestad/"

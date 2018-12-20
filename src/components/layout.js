@@ -39,6 +39,7 @@ const Layout = ({ children, location }) => (
           >
             <html lang="en" />
           </Helmet>
+
           <StickyContainer>
             <Sticky>
               {({ style }) => (
@@ -48,6 +49,7 @@ const Layout = ({ children, location }) => (
               )}
             </Sticky>
             {children}
+
             <Footer />
           </StickyContainer>
         </>
