@@ -3,7 +3,9 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import styles from './about.module.scss'
-import { Fade } from 'react-reveal'
+import { Fade, Flip, Zoom } from 'react-reveal'
+import { FaPlaneDeparture, FaMobileAlt, FaReact } from 'react-icons/fa'
+import { IconContext } from 'react-icons'
 
 const projects = () => (
   <StaticQuery
@@ -31,6 +33,64 @@ const projects = () => (
         <Fade bottom>
           <h2 className={styles.sectionHeader}>{data.wordpressPage.title}</h2>
         </Fade>
+        <div className={styles.keyFacts}>
+          <IconContext.Provider
+            value={{ color: 'rgb(245, 245, 245)', size: '3rem' }}
+          >
+            <div className={styles.keyFactCol}>
+              <Flip left>
+                <div className={styles.iconContainer}>
+                  <FaPlaneDeparture />
+                </div>
+              </Flip>
+              <Zoom>
+                <h2>Hurtig</h2>
+                <p>
+                  Jeg prioriterer alltid at nye nettsider skal laste så raskt
+                  som mulig.
+                </p>
+              </Zoom>
+            </div>
+            <div className={styles.keyFactCol}>
+              <Flip left delay={200}>
+                <div className={styles.iconContainer}>
+                  <FaMobileAlt />
+                </div>
+              </Flip>
+              <Zoom delay={200}>
+                <h2>Responsivt</h2>
+                <p>Responsive oppsett som fungerer på store og små skjermer.</p>
+              </Zoom>
+            </div>
+            <div className={styles.keyFactCol}>
+              <Flip left delay={400}>
+                <div className={styles.iconContainer}>
+                  <FaReact />
+                </div>
+              </Flip>
+              <Zoom delay={400}>
+                <h2>Moderne</h2>
+                <p>
+                  Jeg følger jevnlig med på de siste trendene innen
+                  webutvikling.
+                </p>
+              </Zoom>
+            </div>
+            <div className={styles.keyFactCol}>
+              <Flip left delay={600}>
+                <div className={styles.iconContainer}>
+                  <FaPlaneDeparture />
+                </div>
+              </Flip>
+              <Zoom delay={600}>
+                <h2>Brukervennlig</h2>
+                <p>
+                  Som innholdskreatør forstår jeg verdien av gode grensesnitt.
+                </p>
+              </Zoom>
+            </div>
+          </IconContext.Provider>
+        </div>
         <div className={styles.aboutGrid}>
           <div className={styles.description}>
             <Fade left>
@@ -41,8 +101,6 @@ const projects = () => (
                     .fluid
                 }
               />
-            </Fade>
-            <Fade left delay="200">
               <div
                 dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }}
               />

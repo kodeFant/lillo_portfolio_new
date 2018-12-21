@@ -9,13 +9,56 @@
   composes: sectionHeader from '../../styles/shared.scss';
 }
 
+.keyFacts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  text-align: center;
+  .keyFactCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    @include breakpoint(phablet) {
+      width: 45%;
+    }
+    @include breakpoint(tablet) {
+      width: 20%;
+    }
+
+    .iconContainer {
+      width: 6rem;
+      height: 6rem;
+      display: flex;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      background-color: $mainLight;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $darkGray;
+    }
+
+    p {
+      line-height: 1.5rem;
+    }
+  }
+}
+
 .aboutGrid {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 90%;
+  margin-top: 5rem;
+  margin: 0;
 
   @include breakpoint(tablet) {
-    grid-template-columns: 25rem auto;
+    grid-template-columns: 30rem auto;
     grid-gap: 2rem;
   }
 }
@@ -23,8 +66,8 @@
 .profileImg {
   display: inline-block;
   width: 100%;
-  max-width: 15rem;
-  max-height: 15rem;
+  max-width: 17rem;
+  max-height: 17rem;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -34,10 +77,17 @@
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.5rem;
+  p {
+    margin: 0 3rem;
+  }
 }
 
 .skillGrid {
   margin-top: 2rem;
+  background-color: $white;
+  border: 0.1rem $darkGray solid;
+  border-radius: 3%;
+  padding: 1rem;
 
   flex-direction: column;
   justify-content: center;
@@ -45,6 +95,7 @@
   text-align: center;
 
   @include breakpoint(tablet) {
+    argin-top: 0;
     justify-content: flex-end;
     align-items: center;
     text-align: right;
