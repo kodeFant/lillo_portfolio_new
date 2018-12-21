@@ -4,7 +4,12 @@ import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import styles from './about.module.scss'
 import { Fade, Flip, Zoom } from 'react-reveal'
-import { FaPlaneDeparture, FaMobileAlt, FaReact } from 'react-icons/fa'
+import {
+  FaPlaneDeparture,
+  FaMobileAlt,
+  FaReact,
+  FaBicycle,
+} from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 
 const projects = () => (
@@ -44,7 +49,7 @@ const projects = () => (
                 </div>
               </Flip>
               <Zoom>
-                <h2>Hurtig</h2>
+                <h2>Raskt</h2>
                 <p>
                   Jeg prioriterer alltid at nye nettsider skal laste så raskt
                   som mulig.
@@ -79,7 +84,7 @@ const projects = () => (
             <div className={styles.keyFactCol}>
               <Flip left delay={600}>
                 <div className={styles.iconContainer}>
-                  <FaPlaneDeparture />
+                  <FaBicycle />
                 </div>
               </Flip>
               <Zoom delay={600}>
