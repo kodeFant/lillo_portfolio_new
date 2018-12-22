@@ -35,6 +35,7 @@
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.5rem;
+
   p {
     margin: 0 3rem;
   }
@@ -69,7 +70,11 @@
       cursor: pointer;
       border-bottom: 3px solid transparent;
       padding: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 0.8rem;
+
+      @include breakpoint(phablet) {
+        font-size: 1.1rem;
+      }
 
       &:hover {
         border-bottom: 3px solid $darkGray;
