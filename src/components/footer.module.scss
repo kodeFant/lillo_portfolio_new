@@ -2,6 +2,7 @@
 
 .footer {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -9,6 +10,20 @@
   background-color: $headerBackgroundColor;
   background-image: url('https://www.transparenttextures.com/patterns/classy-fabric.png');
   color: $white;
+
+  .up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $mainDark;
+    height: 4rem;
+    width: 4rem;
+    margin-top: -7rem;
+
+    &:hover {
+      background-color: $main;
+    }
+  }
 }
 
 .socialMediaButtons {
@@ -19,6 +34,7 @@
 $height: 2rem;
 $width: 2rem;
 $iconButtonHoverWidth: 5rem;
+
 .iconButton {
   margin: 0.8rem;
   background-color: rgba($white, 0.9);
@@ -54,18 +70,22 @@ $iconButtonHoverWidth: 5rem;
   transition: all 0.3s;
   width: 0;
 }
+
 .iconButton:hover span {
   width: $iconButtonHoverWidth;
   height: $iconButtonHoverWidth;
   border-radius: $iconButtonHoverWidth;
   margin: calc(#{$iconButtonHoverWidth} / -2);
 }
+
 .twitter span {
   background-color: #4099ff;
 }
+
 .linkedin span {
   background-color: #0077b5;
 }
+
 .github span {
   background-color: #bd2c00;
 }
@@ -86,15 +106,19 @@ $iconButtonHoverWidth: 5rem;
   width: $width;
   z-index: 10;
 }
+
 .iconButton .iconTwitter {
   color: #4099ff;
 }
+
 .iconButton .iconLinkedin {
   color: #0077b5;
 }
+
 .iconButton .iconGithub {
   color: #333;
 }
+
 .iconButton:hover .iconTwitter,
 .iconButton:hover .iconGithub,
 .iconButton:hover .iconLinkedin {

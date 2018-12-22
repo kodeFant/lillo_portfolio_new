@@ -1,9 +1,26 @@
 import React from 'react'
 import styles from './footer.module.scss'
-import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+import {
+  FaTwitter,
+  FaGithub,
+  FaLinkedin,
+  FaAngleDoubleUp,
+} from 'react-icons/fa'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { IconContext } from 'react-icons'
 
 const footer = () => (
   <footer className={styles.footer}>
+    <AnchorLink href="#hjem">
+      <div className={styles.up}>
+        <IconContext.Provider
+          value={{ color: 'rgb(245, 245, 245)', size: '2rem' }}
+        >
+          <FaAngleDoubleUp />
+        </IconContext.Provider>
+      </div>
+    </AnchorLink>
+
     <p className={styles.followMe}>Følg meg og ta gjerne kontakt:</p>
     <div className={styles.socialMediaButtons}>
       <a

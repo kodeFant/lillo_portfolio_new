@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.contact {
+  background-color: $black;
+  composes: article from '../../styles/shared.scss';
+}
+
+.contactContainer {
+  composes: container from global;
+}
+
+.sectionHeader {
+  composes: sectionHeader from '../../styles/shared.scss';
+  color: $white;
+}

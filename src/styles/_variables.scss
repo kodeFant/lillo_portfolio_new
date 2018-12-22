@@ -4,9 +4,13 @@ $headerBackgroundColor: #344;
 $navBackgroundColor: #455;
 $headerBackgroundImage: none;
 $darkGray: #666;
+$mainDark: rgb(216, 174, 97);
 $main: rgb(241, 191, 98);
 $mainLight: rgb(241, 191, 98);
-$mainFont: 'Raleway', sans-serif;
+$mainFont: 'Lato',
+sans-serif;
+$headerFont: 'Raleway',
+sans-serif;
 
 // Colors
 $white: rgb(245, 245, 245);
@@ -18,27 +22,39 @@ $black: rgb(50, 50, 50);
     @media (min-width: 70em) {
       @content;
     }
-  } @else if $point==laptop {
+  }
+
+  @else if $point==laptop {
     @media (min-width: 64em) {
       @content;
     }
-  } @else if $point==tablet {
+  }
+
+  @else if $point==tablet {
     @media (min-width: 50em) {
       @content;
     }
-  } @else if $point==phabletAndMobileonly {
+  }
+
+  @else if $point==phabletAndMobileonly {
     @media (max-width: 50em) {
       @content;
     }
-  } @else if $point==phablet {
+  }
+
+  @else if $point==phablet {
     @media (min-width: 37.5em) {
       @content;
     }
-  } @else if $point==mobileonly {
+  }
+
+  @else if $point==mobileonly {
     @media (max-width: 37.5em) {
       @content;
     }
-  } @else if $point==smallmobileonly {
+  }
+
+  @else if $point==smallmobileonly {
     @media (max-width: 25em) {
       @content;
     }

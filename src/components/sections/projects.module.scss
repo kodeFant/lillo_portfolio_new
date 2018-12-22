@@ -1,9 +1,11 @@
 @import '../../styles/variables';
 
 $outerMargin: 0rem;
+
 .projects {
   composes: container from global;
   max-width: 90%;
+
 }
 
 .sectionHeader {
@@ -18,9 +20,11 @@ $outerMargin: 0rem;
     display: grid;
     overflow: hidden;
     grid-gap: 0.5rem;
+
     @include breakpoint(phablet) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     @include breakpoint(laptop) {
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 0;
