@@ -9,48 +9,6 @@
   composes: sectionHeader from '../../styles/shared.scss';
 }
 
-.keyFacts {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-  text-align: center;
-  .keyFactCol {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    width: 100%;
-    @include breakpoint(phablet) {
-      width: 45%;
-    }
-    @include breakpoint(tablet) {
-      width: 20%;
-    }
-
-    .iconContainer {
-      width: 6rem;
-      height: 6rem;
-      display: flex;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      background-color: $mainLight;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: $darkGray;
-    }
-
-    p {
-      line-height: 1.5rem;
-    }
-  }
-}
-
 .aboutGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -84,10 +42,9 @@
 
 .skillGrid {
   margin-top: 2rem;
-  background-color: $white;
-  border: 0.1rem $darkGray solid;
-  border-radius: 3%;
-  padding: 1rem;
+  background-color: rgba($headerBackgroundColor, 0.1);
+  color: $black;
+  border-radius: 1rem;
 
   flex-direction: column;
   justify-content: center;
@@ -95,17 +52,53 @@
   text-align: center;
 
   @include breakpoint(tablet) {
-    argin-top: 0;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: right;
+    margin-top: 0;
+  }
+
+  .skillNav {
+    display: flex;
+    justify-content: space-around;
+    background-color: $main;
+    color: $black;
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom: 2px solid $main;
+
+    .navLink {
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      padding: 0.5rem;
+      font-size: 1.1rem;
+
+      &:hover {
+        border-bottom: 3px solid $darkGray;
+      }
+
+      &.selected {
+        background: $black;
+        color: $main;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .skillContent {
+    padding: 1rem;
+    line-height: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
   }
 
   p {
     margin-bottom: 1rem;
   }
 
-  div:hover {
-    color: #555;
+  .area:hover {
+    color: rgba($black, 0.8);
   }
 }

@@ -65,7 +65,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'lars-lillo-ulvestad-webutvikler',
-        short_name: 'lillo-webutvikler',
+        short_name: 'portfolio',
         start_url: '/',
         background_color: '#344',
         theme_color: '#ddd',
