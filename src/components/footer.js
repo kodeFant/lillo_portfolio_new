@@ -16,7 +16,7 @@ const footer = () => (
         <IconContext.Provider
           value={{ color: 'rgb(245, 245, 245)', size: '2rem' }}
         >
-          <FaAngleDoubleUp />
+          <FaAngleDoubleUp>Opp</FaAngleDoubleUp>
         </IconContext.Provider>
       </div>
     </AnchorLink>
@@ -29,7 +29,7 @@ const footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaLinkedin className={styles.iconLinkedin} />
+        <FaLinkedin className={styles.iconLinkedin}>LinkedIn</FaLinkedin>
         <span />
       </a>
       <a
@@ -38,7 +38,7 @@ const footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaGithub className={styles.iconGithub} />
+        <FaGithub className={styles.iconGithub}>Github</FaGithub>
         <span />
       </a>
       <a
@@ -47,7 +47,7 @@ const footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaTwitter className={styles.iconTwitter} />
+        <FaTwitter className={styles.iconTwitter}>Twitter</FaTwitter>
         <span />
       </a>
     </div>

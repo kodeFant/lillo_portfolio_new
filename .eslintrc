@@ -4,8 +4,8 @@
     "strict": 0,
     "prettier/prettier": "error"
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["prettier", "react"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
+  "plugins": ["prettier", "react", "jsx-a11y"],
   "settings": {
     "react": {
       "version": "16.5"
