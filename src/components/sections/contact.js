@@ -133,6 +133,11 @@ const contact = () => (
               </Control>
               <Control>
                 <BulmaField>
+                  <input
+                    type="hidden"
+                    name="form-name"
+                    value="portfolio-contact"
+                  />
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Button
                       component="button"
@@ -144,11 +149,6 @@ const contact = () => (
                     </Button>
                   </div>
                 </BulmaField>
-                <input
-                  type="hidden"
-                  name="form-name"
-                  value="portfolio-contact"
-                />
               </Control>
             </form>
           )
