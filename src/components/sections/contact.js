@@ -54,7 +54,7 @@ const contact = () => (
             })
               .then(() => {
                 alert(
-                  'Takk! Din henvendelse er mottatt. Jeg svarer deg innen en dag eller to.'
+                  'Takk! Din henvendelse er mottatt. Jeg svarer som regel innen en dag eller to.'
                 )
                 console.log(
                   encode({
@@ -80,6 +80,8 @@ const contact = () => (
           return (
             <form
               name="portfolioContact"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
               className={styles.contactForm}
               onSubmit={handleSubmit}
             >
