@@ -49,7 +49,8 @@ const contact = () => (
               headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
               body: encode({
                 'form-name': 'portfolio-contact',
-                submission: { ...values },
+                formSucceed: 'true',
+                ...values,
               }),
             })
               .then(() => alert('Success!'))
