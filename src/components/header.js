@@ -51,13 +51,7 @@ const Header = () => (
           <Typing.Backspace count={20} />
           <p style={{ opacity: 0 }}>.</p>
         </Typing>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-start',
-            marginTop: '2rem',
-          }}
-        >
+        <div className={styles.findOutMore}>
           <Button
             style={{ marginLeft: 0 }}
             component={AnchorLink}
