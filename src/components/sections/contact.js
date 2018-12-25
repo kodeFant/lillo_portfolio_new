@@ -48,12 +48,21 @@ const contact = () => (
               method: 'POST',
               headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
               body: encode({
-                'form-name': 'portfolio-contact',
-                formSucceed: 'true',
+                'form-name': 'portfolioContact',
                 ...values,
               }),
             })
-              .then(() => alert(JSON.stringify(values)))
+              .then(() => {
+                alert(
+                  'Takk! Din henvendelse er mottatt. Jeg svarer deg innen en dag eller to.'
+                )
+                console.log(
+                  encode({
+                    'form-name': 'portfolioContact',
+                    ...values,
+                  })
+                )
+              })
               .catch(error => alert(error))
 
             e.preventDefault()
@@ -70,7 +79,7 @@ const contact = () => (
 
           return (
             <form
-              name="portfolio-contact"
+              name="portfolioContact"
               className={styles.contactForm}
               onSubmit={handleSubmit}
             >
@@ -130,7 +139,7 @@ const contact = () => (
                   <input
                     type="hidden"
                     name="form-name"
-                    value="portfolio-contact"
+                    value="portfolioContact"
                   />
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Button
