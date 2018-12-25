@@ -69,7 +69,11 @@ const contact = () => (
               : false
 
           return (
-            <form className={styles.contactForm} onSubmit={handleSubmit}>
+            <form
+              name="portfolio-contact"
+              className={styles.contactForm}
+              onSubmit={handleSubmit}
+            >
               <Control>
                 <BulmaField>
                   <Control>
