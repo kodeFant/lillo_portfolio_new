@@ -77,15 +77,13 @@ const contact = () => (
               <Control>
                 <BulmaField>
                   <Control>
-                    <FormikField
-                      component={Input}
-                      id="name"
-                      name="name"
+                    <Input
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.name}
                       placeholder="Navn"
+                      name="name"
                     />
                     <ErrorMessage
                       name="name"
@@ -95,15 +93,13 @@ const contact = () => (
                 </BulmaField>
                 <BulmaField>
                   <Control>
-                    <FormikField
-                      component={Input}
-                      id="email"
-                      name="email"
+                    <Input
                       type="email"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
                       placeholder="Epost"
+                      name="email"
                     />
                     <ErrorMessage
                       name="email"
@@ -114,15 +110,13 @@ const contact = () => (
 
                 <BulmaField>
                   <Control>
-                    <FormikField
-                      component={Textarea}
-                      id="message"
-                      name="message"
+                    <Textarea
                       type="message"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.message}
                       placeholder="Beskjed"
+                      name="message"
                     />
                     <ErrorMessage
                       name="message"
