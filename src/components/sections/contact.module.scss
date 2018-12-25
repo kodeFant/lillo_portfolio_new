@@ -7,9 +7,28 @@
 
 .contactContainer {
   composes: container from global;
+
+  @include breakpoint(phablet) {
+    max-width: 40rem;
+  }
 }
 
 .sectionHeader {
   composes: sectionHeader from '../../styles/shared.scss';
   color: $white;
+}
+
+.contactForm {
+  padding-right: 1.625em;
+}
+
+.submitButton {
+  transition: all 0.3s ease-in-out;
+
+  &[disabled] {
+    background-color: rgba($main, 0.7);
+
+    color: $darkGray;
+    cursor: not-allowed;
+  }
 }

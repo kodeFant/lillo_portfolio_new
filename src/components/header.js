@@ -2,6 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './header.module.scss'
 import Typing from 'react-typing-animation'
+import Button from './button'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Header = () => (
   <header id="hjem" className={styles.header}>
@@ -49,6 +51,21 @@ const Header = () => (
           <Typing.Backspace count={20} />
           <p style={{ opacity: 0 }}>.</p>
         </Typing>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            marginTop: '2rem',
+          }}
+        >
+          <Button
+            style={{ marginLeft: 0 }}
+            component={AnchorLink}
+            href="#about"
+          >
+            Finn ut mer
+          </Button>
+        </div>
       </div>
     </div>
   </header>

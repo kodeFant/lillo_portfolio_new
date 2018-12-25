@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import styles from './projects.module.scss'
 import { Flip, Fade } from 'react-reveal'
+import Button from '../button'
 
 const projects = ({ data }) => (
   <div id="portfolio" className={styles.portfolio}>
@@ -36,15 +37,15 @@ const projects = ({ data }) => (
                   to={item.node.slug}
                   style={{ verticalAlign: 'middle' }}
                 > */}
-                    <a
+                    <Button
                       href={item.node.acf.site_link}
-                      className={styles.btn}
+                      compontent="a"
                       style={{ verticalAlign: 'middle' }}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Besøk
-                    </a>
+                    </Button>
                     {/* </Link> */}
                   </div>
                 </div>

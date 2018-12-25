@@ -66,6 +66,7 @@ class Projects extends Component {
                         this.state.selectedTab === 1 ? styles.selected : null
                       }`}
                       onClick={() => this.setState({ selectedTab: 1 })}
+                      onKeyPress={() => this.setState({ selectedTab: 1 })}
                     >
                       Teknologier
                     </li>

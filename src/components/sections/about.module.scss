@@ -16,6 +16,11 @@
   margin: 0;
 
   @include breakpoint(tablet) {
+    grid-template-columns: 20rem auto;
+    grid-gap: 2rem;
+  }
+
+  @include breakpoint(laptop) {
     grid-template-columns: 30rem auto;
     grid-gap: 2rem;
   }
@@ -54,6 +59,7 @@
 
   @include breakpoint(tablet) {
     margin-top: 0;
+    width: 100%;
   }
 
   .skillNav {
@@ -76,7 +82,8 @@
         font-size: 1.1rem;
       }
 
-      &:hover {
+      &:hover,
+      &:active {
         border-bottom: 3px solid $darkGray;
       }
 

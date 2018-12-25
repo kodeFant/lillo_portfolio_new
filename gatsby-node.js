@@ -97,3 +97,22 @@ exports.createPages = ({ graphql, actions }) => {
   })
   // ==== END POSTS ====
 }
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  getConfig,
+  rules,
+  loaders,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        './_variables.sass': path.resolve(
+          __dirname,
+          'src/styles/_bulma-variables.scss'
+        ),
+      },
+    },
+  })
+}

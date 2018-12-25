@@ -6,6 +6,7 @@ import Header from '../components/header'
 import Layout from '../components/layout'
 import About from '../components/sections/about'
 import Projects from '../components/sections/projects'
+import Contact from '../components/sections/contact'
 
 const IndexPage = ({ data }) => {
   return (
@@ -14,6 +15,7 @@ const IndexPage = ({ data }) => {
       <Layout location="/">
         <About />
         <Projects data={data.allWordpressWpPortfolio.edges} />
+        <Contact />
       </Layout>
     </>
   )

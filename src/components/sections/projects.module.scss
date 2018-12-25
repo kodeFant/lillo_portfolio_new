@@ -95,12 +95,9 @@ $outerMargin: 0rem;
   }
 }
 
-.btn {
-  background-color: $main;
-  transform: translateY(20px);
-  transition: transform 0.3s ease-in-out;
-}
+
 
 .btn {
-  composes: btn from global;
+  composes: btn from '../../styles/shared.scss';
+  composes: btnEffect from '../../styles/shared.scss';
 }
