@@ -47,7 +47,10 @@ const contact = () => (
             fetch('/', {
               method: 'POST',
               headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: encode({ 'form-name': 'portfolio-contact', ...values }),
+              body: encode({
+                'form-name': 'portfolio-contact',
+                submission: { ...values },
+              }),
             })
               .then(() => alert('Success!'))
               .catch(error => alert(error))
