@@ -21,7 +21,7 @@ const validationSchema = Yup.object().shape({
 })
 
 const contact = () => (
-  <div className={styles.contact}>
+  <div id="contact" className={styles.contact}>
     <div className={styles.contactContainer}>
       <Fade bottom>
         <h2 className={styles.sectionHeader}>Kontakt</h2>
@@ -53,7 +53,7 @@ const contact = () => (
                 ...values,
               }),
             })
-              .then(() => alert('Success!'))
+              .then(() => alert(JSON.stringify(values)))
               .catch(error => alert(error))
 
             e.preventDefault()
