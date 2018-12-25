@@ -34,6 +34,27 @@ const contact = () => (
         }}
         validationSchema={validationSchema}
         render={({ values, handleChange, handleBlur, errors, touched }) => {
+          const encode = data => {
+            return Object.keys(data)
+              .map(
+                key =>
+                  encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+              )
+              .join('&')
+          }
+
+          const handleSubmit = e => {
+            fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: encode({ 'form-name': 'portfolio-contact', ...values }),
+            })
+              .then(() => alert('Success!'))
+              .catch(error => alert(error))
+
+            e.preventDefault()
+          }
+
           const validatedForm =
             !errors.name &&
             touched.name &&
@@ -42,14 +63,9 @@ const contact = () => (
             !errors.message
               ? true
               : false
+
           return (
-            <form
-              className={styles.contactForm}
-              data-netlify="true"
-              method="POST"
-              name="portfolio-contact"
-              data-netlify-honeypot="bot-field"
-            >
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
               <Control>
                 <BulmaField>
                   <Control>
