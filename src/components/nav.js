@@ -26,7 +26,7 @@ class Nav extends Component {
             className={`${styles.navLinks} ${
               this.state.open ? null : styles.hidden
             }`}
-            offset={-52}
+            offset={-54}
           >
             {this.props.data.wordpressWpApiMenusMenusItems.items.map(item => (
               <li key={item.object_slug}>
@@ -51,7 +51,7 @@ class Nav extends Component {
               onClick={this.handleClick}
               width={20}
               height={15}
-              strokeWidth={3}
+              strokeWidth={2}
               color={'rgb(245, 245, 245)'}
               animationDuration={0.5}
             />
