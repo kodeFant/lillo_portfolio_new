@@ -31,7 +31,11 @@ class Nav extends Component {
             {this.props.data.wordpressWpApiMenusMenusItems.items.map(item => (
               <li key={item.object_slug}>
                 {this.props.location === '/' ? (
-                  <AnchorLink offset={() => 52} href={`#${item.object_slug}`}>
+                  <AnchorLink
+                    onClick={() => this.handleClick()}
+                    offset={() => 52}
+                    href={`#${item.object_slug}`}
+                  >
                     {item.title}
                   </AnchorLink>
                 ) : (
