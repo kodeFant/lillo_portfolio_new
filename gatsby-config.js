@@ -85,9 +85,9 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-netlify-cache',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-netlify',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
+    'gatsby-plugin-netlify',
   ],
 }
