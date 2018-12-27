@@ -32,6 +32,7 @@ const footer = ({ location }) => (
         className={`${styles.iconButton} ${styles.linkedin}`}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="LinkedIn"
       >
         <FaLinkedin className={styles.iconLinkedin}>LinkedIn</FaLinkedin>
         <span />
@@ -53,9 +54,7 @@ const footer = ({ location }) => (
         rel="noopener noreferrer"
         aria-label="Twitter"
       >
-        <FaTwitter className={styles.iconTwitter} aria-label="Twitter">
-          Twitter
-        </FaTwitter>
+        <FaTwitter className={styles.iconTwitter}>Twitter</FaTwitter>
         <span />
       </a>
     </div>
