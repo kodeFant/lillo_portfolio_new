@@ -11,7 +11,11 @@ import { IconContext } from 'react-icons'
 
 const footer = ({ location }) => (
   <footer className={styles.footer}>
-    <AnchorLink href={location === '/' ? '#hjem' : '#portfolio'} offset="52">
+    <AnchorLink
+      href={location === '/' ? '#hjem' : '#portfolio'}
+      offset="52"
+      aria-label="Tilbake til toppen"
+    >
       <div className={styles.up}>
         <IconContext.Provider
           value={{ color: 'rgb(245, 245, 245)', size: '2rem' }}
@@ -37,6 +41,7 @@ const footer = ({ location }) => (
         className={`${styles.iconButton} ${styles.github}`}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="GitHub"
       >
         <FaGithub className={styles.iconGithub}>Github</FaGithub>
         <span />
@@ -46,8 +51,11 @@ const footer = ({ location }) => (
         className={`${styles.iconButton} ${styles.twitter}`}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Twitter"
       >
-        <FaTwitter className={styles.iconTwitter}>Twitter</FaTwitter>
+        <FaTwitter className={styles.iconTwitter} aria-label="Twitter">
+          Twitter
+        </FaTwitter>
         <span />
       </a>
     </div>
