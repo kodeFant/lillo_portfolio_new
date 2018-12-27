@@ -28,9 +28,9 @@ const projects = ({ data }) => (
                   <div className={styles.projectInfo}>
                     <div className={styles.projectTitle}>
                       <h3>{item.node.title}</h3>
-                      <ul className={styles.technologies}>
+                      <div className={styles.technologies}>
                         {item.node.tech.map(tech => tech.name).join(', ')}
-                      </ul>
+                      </div>
                     </div>
                     <Button
                       component={Link}
