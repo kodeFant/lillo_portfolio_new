@@ -8,6 +8,7 @@ import {
   Control,
   Textarea,
   Help,
+  Label,
 } from 'react-bulma-components/lib/components/form'
 import Button from '../button'
 import * as Yup from 'yup'
@@ -98,6 +99,9 @@ class Contact extends Component {
                     >
                       <Control>
                         <BulmaField>
+                          <Label htmlFor="name" style={{ color: 'white' }}>
+                            Navn
+                          </Label>
                           <Control>
                             <Input
                               type="text"
@@ -114,6 +118,9 @@ class Contact extends Component {
                           </Control>
                         </BulmaField>
                         <BulmaField>
+                          <Label htmlFor="email" style={{ color: 'white' }}>
+                            Epost
+                          </Label>
                           <Control>
                             <Input
                               type="email"
@@ -132,6 +139,9 @@ class Contact extends Component {
 
                         <BulmaField>
                           <Control>
+                            <Label htmlFor="message" style={{ color: 'white' }}>
+                              Beskjed
+                            </Label>
                             <Textarea
                               type="message"
                               onChange={handleChange}
