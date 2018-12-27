@@ -88,6 +88,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        allPageHeaders: [
+          "Link: </src/images/gatsby-icon.png>; rel=preload; as=style",
+          "Link: </src/pages/index.js>; rel=preload; as=script",
+        ],
+    },
   ],
 }
