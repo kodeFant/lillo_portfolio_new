@@ -101,65 +101,62 @@ class Contact extends Component {
                         <BulmaField>
                           <Label htmlFor="name" style={{ color: 'white' }}>
                             Navn
-                            <Control>
-                              <Input
-                                type="text"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.name}
-                                placeholder="Navn"
-                                name="name"
-                              />
-                              <ErrorMessage
-                                name="name"
-                                render={msg => (
-                                  <Help color="danger">{msg}</Help>
-                                )}
-                              />
-                            </Control>
                           </Label>
+                          <Control>
+                            <Input
+                              id="name"
+                              type="text"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.name}
+                              placeholder="Navn"
+                              name="name"
+                            />
+                            <ErrorMessage
+                              name="name"
+                              render={msg => <Help color="danger">{msg}</Help>}
+                            />
+                          </Control>
                         </BulmaField>
                         <BulmaField>
                           <Label htmlFor="email" style={{ color: 'white' }}>
                             Epost
-                            <Control>
-                              <Input
-                                type="email"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.email}
-                                placeholder="Epost"
-                                name="email"
-                              />
-                              <ErrorMessage
-                                name="email"
-                                render={msg => (
-                                  <Help color="danger">{msg}</Help>
-                                )}
-                              />
-                            </Control>
                           </Label>
+                          <Control>
+                            <Input
+                              id="email"
+                              type="email"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.email}
+                              placeholder="Epost"
+                              name="email"
+                            />
+                            <ErrorMessage
+                              name="email"
+                              render={msg => <Help color="danger">{msg}</Help>}
+                            />
+                          </Control>
                         </BulmaField>
 
                         <BulmaField>
+                          <Label htmlFor="message" style={{ color: 'white' }}>
+                            Beskjed
+                          </Label>
                           <Control>
-                            <Label htmlFor="message" style={{ color: 'white' }}>
-                              Beskjed
-                              <Textarea
-                                type="message"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.message}
-                                placeholder="Beskjed"
-                                name="message"
-                              />
-                              <ErrorMessage
-                                name="message"
-                                render={msg => (
-                                  <Help color="danger">{msg}</Help>
-                                )}
-                              />
-                            </Label>
+                            <Textarea
+                              id="message"
+                              type="message"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.message}
+                              placeholder="Beskjed"
+                              name="message"
+                            />
+                            <ErrorMessage
+                              name="message"
+                              render={msg => <Help color="danger">{msg}</Help>}
+                            />
                           </Control>
                         </BulmaField>
                       </Control>
