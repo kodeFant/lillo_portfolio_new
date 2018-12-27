@@ -92,9 +92,10 @@ module.exports = {
       resolve: `gatsby-plugin-netlify`,
       options: {
         allPageHeaders: [
-          "Link: </src/images/gatsby-icon.png>; rel=preload; as=style",
-          "Link: </src/pages/index.js>; rel=preload; as=script",
+          'Link: </src/images/gatsby-icon.png>; rel=preload; as=style',
+          'Link: </src/pages/index.js>; rel=preload; as=script',
         ],
+      },
     },
   ],
 }
