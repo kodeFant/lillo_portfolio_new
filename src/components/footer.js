@@ -9,9 +9,9 @@ import {
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { IconContext } from 'react-icons'
 
-const footer = () => (
+const footer = ({ location }) => (
   <footer className={styles.footer}>
-    <AnchorLink href="#hjem">
+    <AnchorLink href={location === '/' ? '#hjem' : '#portfolio'} offset="52">
       <div className={styles.up}>
         <IconContext.Provider
           value={{ color: 'rgb(245, 245, 245)', size: '2rem' }}

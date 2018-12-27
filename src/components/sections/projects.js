@@ -1,5 +1,5 @@
 import React from 'react'
-/* import { Link } from 'gatsby' */
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import styles from './projects.module.scss'
@@ -32,21 +32,14 @@ const projects = ({ data }) => (
                         {item.node.tech.map(tech => tech.name).join(', ')}
                       </ul>
                     </div>
-                    {/*                 <Link
-                  className={styles.btn}
-                  to={item.node.slug}
-                  style={{ verticalAlign: 'middle' }}
-                > */}
                     <Button
-                      href={item.node.acf.site_link}
-                      compontent="a"
+                      component={Link}
+                      className={styles.btn}
+                      to={item.node.slug}
                       style={{ verticalAlign: 'middle' }}
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
-                      Besøk
+                      Finn ut mer
                     </Button>
-                    {/* </Link> */}
                   </div>
                 </div>
               </Flip>

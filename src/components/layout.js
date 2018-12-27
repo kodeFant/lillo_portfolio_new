@@ -50,7 +50,7 @@ const Layout = ({ children, location }) => (
             </Sticky>
             {children}
 
-            <Footer />
+            <Footer location={location} />
           </StickyContainer>
         </>
       )

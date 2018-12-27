@@ -3,6 +3,10 @@
 .about {
   composes: article from '../../styles/shared.scss';
   composes: container from global;
+
+  @include breakpoint(mobileonly) {
+    margin-top: 5rem;
+  }
 }
 
 .sectionHeader {

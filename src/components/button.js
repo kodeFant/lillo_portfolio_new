@@ -9,6 +9,9 @@ const button = ({
   component: Button = 'a',
   disabled,
   type,
+  rel,
+  target,
+  to,
 }) => {
   return (
     <Button
@@ -17,6 +20,9 @@ const button = ({
       href={href}
       type={type}
       className={`${styles.btn} ${className}`}
+      rel={rel}
+      target={target}
+      to={to}
     >
       <span className={styles.btnText}>{children}</span>
     </Button>

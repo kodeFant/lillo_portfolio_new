@@ -11,7 +11,7 @@ class Nav extends Component {
     open: false,
   }
 
-  handleClick = () => {
+  toggleOpen = () => {
     this.setState({ open: !this.state.open })
   }
   render() {
@@ -32,7 +32,7 @@ class Nav extends Component {
               <li key={item.object_slug}>
                 {this.props.location === '/' ? (
                   <AnchorLink
-                    onClick={() => this.handleClick()}
+                    onClick={() => this.toggleOpen()}
                     offset={() => 52}
                     href={`#${item.object_slug}`}
                   >
@@ -52,7 +52,7 @@ class Nav extends Component {
           <div className={styles.hamburger}>
             <HamburgerButton
               open={this.state.open}
-              onClick={this.handleClick}
+              onClick={this.toggleOpen}
               width={20}
               height={15}
               strokeWidth={2}

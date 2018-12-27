@@ -4,6 +4,13 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import PropTypes from 'prop-types'
 import styles from './portfolio.module.scss'
+import {
+  FaTwitter,
+  FaGithub,
+  FaLinkedin,
+  FaAngleDoubleUp,
+} from 'react-icons/fa'
+import Button from '../components/button'
 
 export default class Portfolio extends Component {
   render() {
@@ -17,22 +24,42 @@ export default class Portfolio extends Component {
     }
     return (
       <Layout>
-        <div className={styles.portfolio}>
+        <div className={styles.portfolio} id="portfolio">
           <Img
             fluid={postNode.acf.main_image.localFile.childImageSharp.fluid}
           />
-          <a href={postNode.acf.github_link}>Github</a>
-          <a href={postNode.acf.site_link}>Besøk</a>
+
           <h1>{postNode.title}</h1>
-          <p>
-            Teknologier:{' '}
-            {postNode.tech.map(tech => (
-              <span key={tech.slug}>
-                <Link to={`/tech/${tech.slug}`}>{tech.name}</Link>
-              </span>
-            ))}
-          </p>
-          <div dangerouslySetInnerHTML={{ __html: postNode.content }} />
+          <div className={styles.links}>
+            <Button
+              component="a"
+              className={styles.github}
+              href={postNode.acf.github_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </Button>
+            <Button
+              component="a"
+              href={postNode.acf.site_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Besøk
+            </Button>
+          </div>
+          <p className={styles.preamble}>{postNode.acf.preamble}</p>
+          <div className={styles.techBox}>
+            <h3>Teknologier</h3>
+            <div className={styles.techList}>
+              {postNode.tech.map(tech => tech.name).join(', ')}
+            </div>
+          </div>
+          <div
+            className={styles.theArticle}
+            dangerouslySetInnerHTML={{ __html: postNode.content }}
+          />
         </div>
       </Layout>
     )
@@ -59,6 +86,7 @@ export const pageQuery = graphql`
       acf {
         site_link
         github_link
+        preamble
       }
       acf {
         main_image {
