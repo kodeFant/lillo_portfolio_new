@@ -60,7 +60,7 @@ class About extends Component {
               </div>
               <Flip right>
                 <div className={styles.skillGrid}>
-                  <ul className={styles.skillNav}>
+                  <div className={styles.skillNav}>
                     <button
                       className={`${styles.navLink} ${
                         this.state.selectedTab === 1 ? styles.selected : null
@@ -86,7 +86,7 @@ class About extends Component {
                     >
                       Interesser
                     </button>
-                  </ul>
+                  </div>
                   <div className={styles.skillContent}>
                     {this.state.selectedTab === 1 ? (
                       <>
