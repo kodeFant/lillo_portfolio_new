@@ -77,6 +77,8 @@
     border-bottom: 2px solid $main;
 
     .navLink {
+      background-color: transparent;
+      border: 0;
       cursor: pointer;
       border-bottom: 3px solid transparent;
       padding: 0.5rem;

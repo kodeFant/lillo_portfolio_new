@@ -5,7 +5,6 @@ $outerMargin: 0rem;
 .projects {
   composes: container from global;
   max-width: 90%;
-
 }
 
 .sectionHeader {
@@ -60,6 +59,7 @@ $outerMargin: 0rem;
         padding: 1.3rem;
         border-radius: 50%;
 
+        &.focus,
         &:hover {
           opacity: 1;
 
@@ -95,9 +95,11 @@ $outerMargin: 0rem;
   }
 }
 
-
-
 .btn {
   composes: btn from '../../styles/shared.scss';
   composes: btnEffect from '../../styles/shared.scss';
+}
+
+.projectInfo > a.btn:active {
+  opacity: 0.1;
 }

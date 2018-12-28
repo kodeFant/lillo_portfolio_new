@@ -12,6 +12,8 @@ const button = ({
   rel,
   target,
   to,
+  onFocus,
+  onBlur,
 }) => {
   return (
     <Button
@@ -23,6 +25,8 @@ const button = ({
       rel={rel}
       target={target}
       to={to}
+      onFocus={onFocus}
+      onBlur={onBlur}
     >
       <span className={styles.btnText}>{children}</span>
     </Button>

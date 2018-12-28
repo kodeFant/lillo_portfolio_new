@@ -7,7 +7,7 @@ import { Fade, Flip, Zoom } from 'react-reveal'
 
 import KeyFacts from './aboutKeyfacts.js'
 
-class Projects extends Component {
+class About extends Component {
   state = {
     selectedTab: 1,
   }
@@ -61,7 +61,7 @@ class Projects extends Component {
               <Flip right>
                 <div className={styles.skillGrid}>
                   <ul className={styles.skillNav}>
-                    <li
+                    <button
                       className={`${styles.navLink} ${
                         this.state.selectedTab === 1 ? styles.selected : null
                       }`}
@@ -69,23 +69,23 @@ class Projects extends Component {
                       onKeyPress={() => this.setState({ selectedTab: 1 })}
                     >
                       Teknologier
-                    </li>
-                    <li
+                    </button>
+                    <button
                       className={`${styles.navLink} ${
                         this.state.selectedTab === 2 ? styles.selected : null
                       }`}
                       onClick={() => this.setState({ selectedTab: 2 })}
                     >
                       Nøkkelkvalifikasjoner
-                    </li>
-                    <li
+                    </button>
+                    <button
                       className={`${styles.navLink} ${
                         this.state.selectedTab === 3 ? styles.selected : null
                       }`}
                       onClick={() => this.setState({ selectedTab: 3 })}
                     >
                       Interesser
-                    </li>
+                    </button>
                   </ul>
                   <div className={styles.skillContent}>
                     {this.state.selectedTab === 1 ? (
@@ -178,8 +178,8 @@ class Projects extends Component {
     )
   }
 }
-Projects.propTypes = {
+About.propTypes = {
   data: PropTypes.array,
 }
 
-export default Projects
+export default About

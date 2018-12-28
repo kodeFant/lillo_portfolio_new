@@ -33,11 +33,11 @@ const Layout = ({ children, location }) => (
               {
                 name: 'keywords',
                 content:
-                  'JavaScript, React, PHP, Laravel, GatsbyJS, CSS, WordPress',
+                  'JavaScript, React, PHP, Laravel, GatsbyJS, CSS, WordPress, Webutvikler',
               },
             ]}
           >
-            <html lang="en" />
+            <html lang="no" />
           </Helmet>
 
           <StickyContainer>
