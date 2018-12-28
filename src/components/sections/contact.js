@@ -12,6 +12,7 @@ import {
 } from 'react-bulma-components/lib/components/form'
 import Button from '../button'
 import * as Yup from 'yup'
+import Recaptcha from 'react-recaptcha'
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -19,11 +20,20 @@ const validationSchema = Yup.object().shape({
     .required('Påkrevd felt'),
   name: Yup.string().required('Påkrevd felt'),
   message: Yup.string().required('Påkrevd felt'),
+  recaptcha: Yup.string().required('Bekreft at du ikke er en robot'),
 })
 
 class Contact extends Component {
   state = {
     submitted: false,
+  }
+
+  componentDidMount() {
+    const script = document.createElement('script')
+    script.src = 'https://www.google.com/recaptcha/api.js'
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
   }
   render() {
     return (
@@ -38,6 +48,7 @@ class Contact extends Component {
               email: '',
               message: '',
               submitted: '',
+              recaptcha: '',
             }}
             validationSchema={validationSchema}
             render={({
@@ -83,6 +94,7 @@ class Contact extends Component {
                 touched.name &&
                 !errors.email &&
                 touched.email &&
+                !errors.recaptcha &&
                 !errors.message
                   ? true
                   : false
@@ -160,6 +172,34 @@ class Contact extends Component {
                           </Control>
                         </BulmaField>
                       </Control>
+                      <BulmaField>
+                        <Control>
+                          <div
+                            style={{
+                              display: 'flex',
+                              justifyContent: 'center',
+                              marginTop: '1rem',
+                            }}
+                          >
+                            <Recaptcha
+                              sitekey="6LdMaYUUAAAAAC45jX46Xl7fH6SPxnQ-hRRm1ACA"
+                              render="explicit"
+                              theme="dark"
+                              verifyCallback={response => {
+                                setFieldValue('recaptcha', response)
+                              }}
+                              onloadCallback={() => {
+                                console.log('done loading!')
+                              }}
+                              hl="no"
+                            />
+                            <ErrorMessage
+                              name="recaptcha"
+                              render={msg => <Help color="danger">{msg}</Help>}
+                            />
+                          </div>
+                        </Control>
+                      </BulmaField>
                       <Control>
                         <BulmaField>
                           <input
